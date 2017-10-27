@@ -38,7 +38,7 @@ namespace PasswordSecurity
         public const int ITERATION_INDEX = 1;
         public const int HASH_SIZE_INDEX = 2;
         public const int SALT_INDEX = 3;
-        public const int PBKDF2_INDEX = 4
+        public const int PBKDF2_INDEX = 4;
 
         public static string CreateHash(string password)
         {
