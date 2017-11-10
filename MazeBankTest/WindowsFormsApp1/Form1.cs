@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class f_login : Form
     {
-        public Form1()
+        public f_login()
         {
             InitializeComponent();
         }
@@ -27,7 +27,7 @@ namespace WindowsFormsApp1
             Emp_Hide();
             Cred_Hide();
             ATM_Unhide();
-            Form1.ActiveForm.Text = "MAZE Banksystem | ATM";
+            f_login.ActiveForm.Text = "MAZE Banksystem | ATM";
         }
 
         private void Cred_Hide()
@@ -61,7 +61,7 @@ namespace WindowsFormsApp1
             ATM_Hide();
             Cred_Hide();
             Emp_Unhide();
-            Form1.ActiveForm.Text = "MAZE Banksystem | Employee";
+            f_login.ActiveForm.Text = "MAZE Banksystem | Employee";
         }
 
         private void Emp_Unhide()
@@ -88,7 +88,7 @@ namespace WindowsFormsApp1
         {
             ATM_Hide();
             Emp_Hide();
-            Form1.ActiveForm.Text = "MAZE Banksystem | Credits";
+            f_login.ActiveForm.Text = "MAZE Banksystem | Credits";
             Cred_Unhide();
         }
 

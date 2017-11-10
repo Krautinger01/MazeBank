@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Form1
+    partial class f_login
     {
         /// <summary>
         /// Erforderliche Designervariable.
@@ -185,13 +185,13 @@
             // employeeToolStripMenuItem1
             // 
             this.employeeToolStripMenuItem1.Name = "employeeToolStripMenuItem1";
-            this.employeeToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
+            this.employeeToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.employeeToolStripMenuItem1.Text = "Employee";
             // 
             // aTMToolStripMenuItem1
             // 
             this.aTMToolStripMenuItem1.Name = "aTMToolStripMenuItem1";
-            this.aTMToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
+            this.aTMToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.aTMToolStripMenuItem1.Text = "ATM";
             // 
             // loginatm_lbl_Bic
@@ -317,7 +317,7 @@
             this.lbl_CreditsCurrent.Text = "Credits";
             this.lbl_CreditsCurrent.Visible = false;
             // 
-            // Form1
+            // f_login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -341,7 +341,7 @@
             this.Controls.Add(this.loginemp_txt_User);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "f_login";
             this.Text = "MAZE Banksystem | Employee";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
