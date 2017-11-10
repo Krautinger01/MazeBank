@@ -35,12 +35,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.creditsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.employeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aTMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeProgrammToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.creditsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.employeeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aTMToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -127,6 +127,18 @@
             this.loginToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.loginToolStripMenuItem.Text = "Login";
             // 
+            // employeeToolStripMenuItem
+            // 
+            this.employeeToolStripMenuItem.Name = "employeeToolStripMenuItem";
+            this.employeeToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.employeeToolStripMenuItem.Text = "Employee";
+            // 
+            // aTMToolStripMenuItem
+            // 
+            this.aTMToolStripMenuItem.Name = "aTMToolStripMenuItem";
+            this.aTMToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.aTMToolStripMenuItem.Text = "ATM";
+            // 
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -134,6 +146,13 @@
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.optionsToolStripMenuItem.Text = "Options";
+            // 
+            // closeProgrammToolStripMenuItem
+            // 
+            this.closeProgrammToolStripMenuItem.Name = "closeProgrammToolStripMenuItem";
+            this.closeProgrammToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.closeProgrammToolStripMenuItem.Text = "Close Programm";
+            this.closeProgrammToolStripMenuItem.Click += new System.EventHandler(this.closeProgrammToolStripMenuItem_Click);
             // 
             // creditsToolStripMenuItem
             // 
@@ -150,35 +169,16 @@
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
-            // employeeToolStripMenuItem
-            // 
-            this.employeeToolStripMenuItem.Name = "employeeToolStripMenuItem";
-            this.employeeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.employeeToolStripMenuItem.Text = "Employee";
-            // 
-            // aTMToolStripMenuItem
-            // 
-            this.aTMToolStripMenuItem.Name = "aTMToolStripMenuItem";
-            this.aTMToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.aTMToolStripMenuItem.Text = "ATM";
-            // 
-            // closeProgrammToolStripMenuItem
-            // 
-            this.closeProgrammToolStripMenuItem.Name = "closeProgrammToolStripMenuItem";
-            this.closeProgrammToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.closeProgrammToolStripMenuItem.Text = "Close Programm";
-            this.closeProgrammToolStripMenuItem.Click += new System.EventHandler(this.closeProgrammToolStripMenuItem_Click);
-            // 
             // employeeToolStripMenuItem1
             // 
             this.employeeToolStripMenuItem1.Name = "employeeToolStripMenuItem1";
-            this.employeeToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.employeeToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
             this.employeeToolStripMenuItem1.Text = "Employee";
             // 
             // aTMToolStripMenuItem1
             // 
             this.aTMToolStripMenuItem1.Name = "aTMToolStripMenuItem1";
-            this.aTMToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.aTMToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
             this.aTMToolStripMenuItem1.Text = "ATM";
             // 
             // Form1
@@ -197,6 +197,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "MAZE Banksystem | Login";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
