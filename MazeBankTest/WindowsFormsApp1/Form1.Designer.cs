@@ -181,6 +181,7 @@
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // employeeToolStripMenuItem1
             // 
@@ -324,6 +325,7 @@
             this.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.wall1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(332, 189);
+            this.ControlBox = false;
             this.Controls.Add(this.lbl_CreditsCurrent);
             this.Controls.Add(this.lbl_Credits);
             this.Controls.Add(this.lbl_Version);
@@ -342,7 +344,9 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "f_login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MAZE Banksystem | Employee";
+            this.Load += new System.EventHandler(this.f_login_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

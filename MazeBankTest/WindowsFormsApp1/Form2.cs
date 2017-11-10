@@ -16,5 +16,10 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        private void closeProgrammToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
     }
 }

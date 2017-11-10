@@ -97,5 +97,17 @@ namespace WindowsFormsApp1
             lbl_Credits.Visible = true;
             lbl_CreditsCurrent.Visible = true;
         }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            f_Employee formEmployee = new f_Employee();
+            this.Hide();
+            formEmployee.Show();
+        }
+
+        private void f_login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
