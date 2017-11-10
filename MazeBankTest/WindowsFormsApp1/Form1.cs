@@ -21,7 +21,5 @@ namespace WindowsFormsApp1
         {
             System.Environment.Exit(0);
         }
-
-
     }
 }
