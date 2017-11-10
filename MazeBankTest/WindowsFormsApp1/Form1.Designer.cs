@@ -48,8 +48,11 @@
             this.loginatm_lbl_Pin = new System.Windows.Forms.Label();
             this.loginatm_txt_Pin = new System.Windows.Forms.TextBox();
             this.loginatm_btn_Login = new System.Windows.Forms.Button();
-            this.lbl_employee = new System.Windows.Forms.Label();
-            this.lbl_atm = new System.Windows.Forms.Label();
+            this.loginemp_lbl_Current = new System.Windows.Forms.Label();
+            this.loginatm_lbl_Current = new System.Windows.Forms.Label();
+            this.lbl_Version = new System.Windows.Forms.Label();
+            this.lbl_Credits = new System.Windows.Forms.Label();
+            this.lbl_CreditsCurrent = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -168,6 +171,7 @@
             this.creditsToolStripMenuItem.Name = "creditsToolStripMenuItem";
             this.creditsToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.creditsToolStripMenuItem.Text = "Credits";
+            this.creditsToolStripMenuItem.Click += new System.EventHandler(this.creditsToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -253,27 +257,65 @@
             this.loginatm_btn_Login.UseVisualStyleBackColor = false;
             this.loginatm_btn_Login.Visible = false;
             // 
-            // lbl_employee
+            // loginemp_lbl_Current
             // 
-            this.lbl_employee.AutoSize = true;
-            this.lbl_employee.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.lbl_employee.Image = global::WindowsFormsApp1.Properties.Resources.wall1;
-            this.lbl_employee.Location = new System.Drawing.Point(279, 24);
-            this.lbl_employee.Name = "lbl_employee";
-            this.lbl_employee.Size = new System.Drawing.Size(53, 13);
-            this.lbl_employee.TabIndex = 14;
-            this.lbl_employee.Text = "Employee";
+            this.loginemp_lbl_Current.AutoSize = true;
+            this.loginemp_lbl_Current.BackColor = System.Drawing.Color.Transparent;
+            this.loginemp_lbl_Current.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.loginemp_lbl_Current.Location = new System.Drawing.Point(279, 24);
+            this.loginemp_lbl_Current.Name = "loginemp_lbl_Current";
+            this.loginemp_lbl_Current.Size = new System.Drawing.Size(53, 13);
+            this.loginemp_lbl_Current.TabIndex = 14;
+            this.loginemp_lbl_Current.Text = "Employee";
             // 
-            // lbl_atm
+            // loginatm_lbl_Current
             // 
-            this.lbl_atm.AutoSize = true;
-            this.lbl_atm.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.lbl_atm.Image = global::WindowsFormsApp1.Properties.Resources.wall1;
-            this.lbl_atm.Location = new System.Drawing.Point(302, 24);
-            this.lbl_atm.Name = "lbl_atm";
-            this.lbl_atm.Size = new System.Drawing.Size(30, 13);
-            this.lbl_atm.TabIndex = 13;
-            this.lbl_atm.Text = "ATM";
+            this.loginatm_lbl_Current.AutoSize = true;
+            this.loginatm_lbl_Current.BackColor = System.Drawing.Color.Transparent;
+            this.loginatm_lbl_Current.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.loginatm_lbl_Current.Location = new System.Drawing.Point(302, 24);
+            this.loginatm_lbl_Current.Name = "loginatm_lbl_Current";
+            this.loginatm_lbl_Current.Size = new System.Drawing.Size(30, 13);
+            this.loginatm_lbl_Current.TabIndex = 13;
+            this.loginatm_lbl_Current.Text = "ATM";
+            this.loginatm_lbl_Current.Visible = false;
+            // 
+            // lbl_Version
+            // 
+            this.lbl_Version.AutoSize = true;
+            this.lbl_Version.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Version.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.lbl_Version.Location = new System.Drawing.Point(-3, 170);
+            this.lbl_Version.Name = "lbl_Version";
+            this.lbl_Version.Size = new System.Drawing.Size(60, 13);
+            this.lbl_Version.TabIndex = 15;
+            this.lbl_Version.Text = "Version 0.1";
+            // 
+            // lbl_Credits
+            // 
+            this.lbl_Credits.AutoSize = true;
+            this.lbl_Credits.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Credits.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.lbl_Credits.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_Credits.Location = new System.Drawing.Point(12, 39);
+            this.lbl_Credits.Name = "lbl_Credits";
+            this.lbl_Credits.Size = new System.Drawing.Size(307, 52);
+            this.lbl_Credits.TabIndex = 16;
+            this.lbl_Credits.Text = "Credits\r\n\r\nProgramming - Paul Stoeger, Maximilian Weissbacher\r\nDesign - Paul Stoe" +
+    "ger, Maximilian Weissbacher\r\n";
+            this.lbl_Credits.Visible = false;
+            // 
+            // lbl_CreditsCurrent
+            // 
+            this.lbl_CreditsCurrent.AutoSize = true;
+            this.lbl_CreditsCurrent.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_CreditsCurrent.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.lbl_CreditsCurrent.Location = new System.Drawing.Point(293, 24);
+            this.lbl_CreditsCurrent.Name = "lbl_CreditsCurrent";
+            this.lbl_CreditsCurrent.Size = new System.Drawing.Size(39, 13);
+            this.lbl_CreditsCurrent.TabIndex = 17;
+            this.lbl_CreditsCurrent.Text = "Credits";
+            this.lbl_CreditsCurrent.Visible = false;
             // 
             // Form1
             // 
@@ -281,9 +323,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.wall1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(332, 183);
-            this.Controls.Add(this.lbl_atm);
-            this.Controls.Add(this.lbl_employee);
+            this.ClientSize = new System.Drawing.Size(332, 189);
+            this.Controls.Add(this.lbl_CreditsCurrent);
+            this.Controls.Add(this.lbl_Credits);
+            this.Controls.Add(this.lbl_Version);
+            this.Controls.Add(this.loginatm_lbl_Current);
+            this.Controls.Add(this.loginemp_lbl_Current);
             this.Controls.Add(this.loginatm_btn_Login);
             this.Controls.Add(this.loginatm_txt_Pin);
             this.Controls.Add(this.loginatm_lbl_Pin);
@@ -327,8 +372,11 @@
         private System.Windows.Forms.Label loginatm_lbl_Pin;
         private System.Windows.Forms.TextBox loginatm_txt_Pin;
         private System.Windows.Forms.Button loginatm_btn_Login;
-        private System.Windows.Forms.Label lbl_employee;
-        private System.Windows.Forms.Label lbl_atm;
+        private System.Windows.Forms.Label loginemp_lbl_Current;
+        private System.Windows.Forms.Label loginatm_lbl_Current;
+        private System.Windows.Forms.Label lbl_Version;
+        private System.Windows.Forms.Label lbl_Credits;
+        private System.Windows.Forms.Label lbl_CreditsCurrent;
     }
 }
 

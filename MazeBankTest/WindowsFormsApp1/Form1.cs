@@ -25,8 +25,15 @@ namespace WindowsFormsApp1
         private void aTMToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Emp_Hide();
+            Cred_Hide();
             ATM_Unhide();
             Form1.ActiveForm.Text = "MAZE Banksystem | ATM";
+        }
+
+        private void Cred_Hide()
+        {
+            lbl_Credits.Visible = false;
+            lbl_CreditsCurrent.Visible = false;
         }
 
         private void ATM_Unhide()
@@ -36,7 +43,7 @@ namespace WindowsFormsApp1
             loginatm_lbl_Pin.Visible = true;
             loginatm_txt_Pin.Visible = true;
             loginatm_btn_Login.Visible = true;
-            lbl_atm.Visible = true;
+            loginatm_lbl_Current.Visible = true;
         }
 
         private void Emp_Hide()
@@ -46,12 +53,13 @@ namespace WindowsFormsApp1
             loginemp_lbl_Pass.Visible = false;
             loginemp_txt_Pass.Visible = false;
             loginemp_btn_Login.Visible = false;
-            lbl_employee.Visible = false;
+            loginemp_lbl_Current.Visible = false;
         }
 
         private void employeeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ATM_Hide();
+            Cred_Hide();
             Emp_Unhide();
             Form1.ActiveForm.Text = "MAZE Banksystem | Employee";
         }
@@ -63,7 +71,7 @@ namespace WindowsFormsApp1
             loginemp_lbl_Pass.Visible = true;
             loginemp_txt_Pass.Visible = true;
             loginemp_btn_Login.Visible = true;
-            lbl_employee.Visible = true;
+            loginemp_lbl_Current.Visible = true;
         }
 
         private void ATM_Hide()
@@ -73,7 +81,21 @@ namespace WindowsFormsApp1
             loginatm_lbl_Pin.Visible = false;
             loginatm_txt_Pin.Visible = false;
             loginatm_btn_Login.Visible = false;
-            lbl_atm.Visible = false;
+            loginatm_lbl_Current.Visible = false;
+        }
+
+        private void creditsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ATM_Hide();
+            Emp_Hide();
+            Form1.ActiveForm.Text = "MAZE Banksystem | Credits";
+            Cred_Unhide();
+        }
+
+        private void Cred_Unhide()
+        {
+            lbl_Credits.Visible = true;
+            lbl_CreditsCurrent.Visible = true;
         }
     }
 }
