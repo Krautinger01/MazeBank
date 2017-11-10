@@ -48,6 +48,8 @@
             this.loginatm_lbl_Pin = new System.Windows.Forms.Label();
             this.loginatm_txt_Pin = new System.Windows.Forms.TextBox();
             this.loginatm_btn_Login = new System.Windows.Forms.Button();
+            this.lbl_employee = new System.Windows.Forms.Label();
+            this.lbl_atm = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -135,14 +137,14 @@
             // employeeToolStripMenuItem
             // 
             this.employeeToolStripMenuItem.Name = "employeeToolStripMenuItem";
-            this.employeeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.employeeToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.employeeToolStripMenuItem.Text = "Employee";
             this.employeeToolStripMenuItem.Click += new System.EventHandler(this.employeeToolStripMenuItem_Click);
             // 
             // aTMToolStripMenuItem
             // 
             this.aTMToolStripMenuItem.Name = "aTMToolStripMenuItem";
-            this.aTMToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aTMToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.aTMToolStripMenuItem.Text = "ATM";
             this.aTMToolStripMenuItem.Click += new System.EventHandler(this.aTMToolStripMenuItem_Click);
             // 
@@ -251,6 +253,28 @@
             this.loginatm_btn_Login.UseVisualStyleBackColor = false;
             this.loginatm_btn_Login.Visible = false;
             // 
+            // lbl_employee
+            // 
+            this.lbl_employee.AutoSize = true;
+            this.lbl_employee.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.lbl_employee.Image = global::WindowsFormsApp1.Properties.Resources.wall1;
+            this.lbl_employee.Location = new System.Drawing.Point(279, 24);
+            this.lbl_employee.Name = "lbl_employee";
+            this.lbl_employee.Size = new System.Drawing.Size(53, 13);
+            this.lbl_employee.TabIndex = 14;
+            this.lbl_employee.Text = "Employee";
+            // 
+            // lbl_atm
+            // 
+            this.lbl_atm.AutoSize = true;
+            this.lbl_atm.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.lbl_atm.Image = global::WindowsFormsApp1.Properties.Resources.wall1;
+            this.lbl_atm.Location = new System.Drawing.Point(302, 24);
+            this.lbl_atm.Name = "lbl_atm";
+            this.lbl_atm.Size = new System.Drawing.Size(30, 13);
+            this.lbl_atm.TabIndex = 13;
+            this.lbl_atm.Text = "ATM";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -258,6 +282,8 @@
             this.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.wall1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(332, 183);
+            this.Controls.Add(this.lbl_atm);
+            this.Controls.Add(this.lbl_employee);
             this.Controls.Add(this.loginatm_btn_Login);
             this.Controls.Add(this.loginatm_txt_Pin);
             this.Controls.Add(this.loginatm_lbl_Pin);
@@ -301,6 +327,8 @@
         private System.Windows.Forms.Label loginatm_lbl_Pin;
         private System.Windows.Forms.TextBox loginatm_txt_Pin;
         private System.Windows.Forms.Button loginatm_btn_Login;
+        private System.Windows.Forms.Label lbl_employee;
+        private System.Windows.Forms.Label lbl_atm;
     }
 }
 

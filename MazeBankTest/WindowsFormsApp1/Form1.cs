@@ -36,6 +36,7 @@ namespace WindowsFormsApp1
             loginatm_lbl_Pin.Visible = true;
             loginatm_txt_Pin.Visible = true;
             loginatm_btn_Login.Visible = true;
+            lbl_atm.Visible = true;
         }
 
         private void Emp_Hide()
@@ -45,6 +46,7 @@ namespace WindowsFormsApp1
             loginemp_lbl_Pass.Visible = false;
             loginemp_txt_Pass.Visible = false;
             loginemp_btn_Login.Visible = false;
+            lbl_employee.Visible = false;
         }
 
         private void employeeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -61,6 +63,7 @@ namespace WindowsFormsApp1
             loginemp_lbl_Pass.Visible = true;
             loginemp_txt_Pass.Visible = true;
             loginemp_btn_Login.Visible = true;
+            lbl_employee.Visible = true;
         }
 
         private void ATM_Hide()
@@ -70,6 +73,7 @@ namespace WindowsFormsApp1
             loginatm_lbl_Pin.Visible = false;
             loginatm_txt_Pin.Visible = false;
             loginatm_btn_Login.Visible = false;
+            lbl_atm.Visible = false;
         }
     }
 }
