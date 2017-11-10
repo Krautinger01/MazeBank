@@ -135,14 +135,16 @@
             // employeeToolStripMenuItem
             // 
             this.employeeToolStripMenuItem.Name = "employeeToolStripMenuItem";
-            this.employeeToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.employeeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.employeeToolStripMenuItem.Text = "Employee";
+            this.employeeToolStripMenuItem.Click += new System.EventHandler(this.employeeToolStripMenuItem_Click);
             // 
             // aTMToolStripMenuItem
             // 
             this.aTMToolStripMenuItem.Name = "aTMToolStripMenuItem";
-            this.aTMToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.aTMToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aTMToolStripMenuItem.Text = "ATM";
+            this.aTMToolStripMenuItem.Click += new System.EventHandler(this.aTMToolStripMenuItem_Click);
             // 
             // optionsToolStripMenuItem
             // 
@@ -226,11 +228,10 @@
             // 
             this.loginatm_txt_Pin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginatm_txt_Pin.Location = new System.Drawing.Point(16, 117);
-            this.loginatm_txt_Pin.MaxLength = 24;
+            this.loginatm_txt_Pin.MaxLength = 4;
             this.loginatm_txt_Pin.Name = "loginatm_txt_Pin";
             this.loginatm_txt_Pin.Size = new System.Drawing.Size(284, 26);
             this.loginatm_txt_Pin.TabIndex = 11;
-            this.loginatm_txt_Pin.UseSystemPasswordChar = true;
             this.loginatm_txt_Pin.Visible = false;
             // 
             // loginatm_btn_Login
@@ -270,7 +271,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "MAZE Banksystem | Login";
+            this.Text = "MAZE Banksystem | Employee";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
