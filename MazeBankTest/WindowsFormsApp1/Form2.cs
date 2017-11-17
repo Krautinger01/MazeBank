@@ -98,6 +98,59 @@ namespace WindowsFormsApp1
                 return false;
             }
         }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            bool zer0 = false;
+            double amount1, amount2, amount;
+            if(txt_num1.Text == "")
+            {
+                amount1 = 0;
+            }
+            else
+            {
+                amount1 = Convert.ToDouble(txt_num1.Text);
+            }
+            if (txt_num2.Text == "" || txt_num2.Text == "0" || txt_num2.Text == "00")
+            {
+                amount2 = 0;
+                zer0 = true;
+            }
+            else if(Convert.ToDouble(txt_num2.Text) < 10)
+            {
+                amount2 = Convert.ToDouble(txt_num2.Text) * 10;
+                zer0 = false;
+            }
+            else
+            {
+                amount2 = Convert.ToDouble(txt_num2.Text);
+                zer0 = false;
+            }
+
+            if(zer0 == true)
+            {
+                amount = amount1 * 100;
+            }
+            else
+            {
+                amount = amount1 * 100 + amount2;
+            }
+
+            lbl_balance.Text = ("Balance: " + Convert.ToString(amount));
+        }
     }
 }
 
