@@ -117,96 +117,96 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(txt_num1.Text != "" && txt_num2.Text != "" || Convert.ToInt64(txt_num1.Text) + Convert.ToInt64(txt_num2.Text) > 0 || txt_num1.Text != "" && Convert.ToInt64(txt_num2.Text) > 0 || txt_num2.Text != "" && Convert.ToInt64(txt_num1.Text) > 0)
+            if (txt_num1.Text != "" && txt_num2.Text != "")
             {
-            DateTime localDate = DateTime.Now;
-            bool zer0 = false;
-            string swithordep;
-            double amount1, amount2, amount;
-            if (txt_num1.Text == "")
-            {
-                amount1 = 0;
-            }
-            else
-            {
-                amount1 = Convert.ToDouble(txt_num1.Text);
-            }
-            if (txt_num2.Text == "" || txt_num2.Text == "0" || txt_num2.Text == "00")
-            {
-                amount2 = 0;
-                zer0 = true;
-            }
-            else if (Convert.ToDouble(txt_num2.Text) < 10)
-            {
-                amount2 = Convert.ToDouble(txt_num2.Text) * 10;
-                zer0 = false;
-            }
-            else
-            {
-                amount2 = Convert.ToDouble(txt_num2.Text);
-                zer0 = false;
-            }
+                DateTime localDate = DateTime.Now;
+                bool zer0 = false;
+                string swithordep;
+                double amount1, amount2, amount;
+                if (txt_num1.Text == "")
+                {
+                    amount1 = 0;
+                }
+                else
+                {
+                    amount1 = Convert.ToDouble(txt_num1.Text);
+                }
+                if (txt_num2.Text == "" || txt_num2.Text == "0" || txt_num2.Text == "00")
+                {
+                    amount2 = 0;
+                    zer0 = true;
+                }
+                else if (Convert.ToDouble(txt_num2.Text) < 10)
+                {
+                    amount2 = Convert.ToDouble(txt_num2.Text) * 10;
+                    zer0 = false;
+                }
+                else
+                {
+                    amount2 = Convert.ToDouble(txt_num2.Text);
+                    zer0 = false;
+                }
 
-            if (zer0 == true)
-            {
-                amount = amount1 * 100;
-            }
-            else
-            {
-                amount = amount1 + amount2 / 100;
-            }
+                if (zer0 == true)
+                {
+                    amount = amount1;
+                }
+                else
+                {
+                    amount = amount1 + amount2 / 100;
+                }
 
-            lbl_balance.Text = ("Balance: " + Convert.ToString(amount));
+                lbl_balance.Text = ("Balance: " + Convert.ToString(amount));
 
-            if(withordep == false)
-            {
-                swithordep = "withdraw";
-            }
-            else
-            {
-                swithordep = "deposit";
-            }
+                if (withordep == false)
+                {
+                    swithordep = "withdraw";
+                }
+                else
+                {
+                    swithordep = "deposit";
+                }
 
-            //Database
-            server = "eduweb.kb.local";
-            database = "team08";
-            uid = "team08";
-            password = "T3amO8";
-            string connectionString;
-            connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
-            connection = new MySqlConnection(connectionString);
+                //Database
+                if (amount > 0)
+                {
 
-            
 
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
-            {
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO Transaction (costumerID, date, type, amount) VALUES (@CostumerID, @Date, @Type, @Amount)");
-                cmd.CommandType = CommandType.Text;
-                cmd.Connection = connection;
-                cmd.Parameters.AddWithValue("@CostumerID", "0001");
-                cmd.Parameters.AddWithValue("@Date", localDate);
-                cmd.Parameters.AddWithValue("@Type", swithordep);
-                cmd.Parameters.AddWithValue("@Amount", amount);
-                connection.Open();
-                cmd.ExecuteNonQuery();
-            }
+                    server = "eduweb.kb.local";
+                    database = "team08";
+                    uid = "team08";
+                    password = "T3amO8";
+                    string connectionString;
+                    connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+                    connection = new MySqlConnection(connectionString);
 
-            database_connection();
 
-            lbl_deposit.Visible = false;
-            lbl_withdraw.Visible = false;
-            lbl_dot.Visible = false;
-            txt_num1.Text = "";
-            txt_num2.Text = "";
-            txt_num1.Visible = false;
-            txt_num2.Visible = false;
-            button1.Visible = false;
-            dataGridView1.Visible = true;
-            }
-            else
-            {
 
-            }
+                    using (MySqlConnection connection = new MySqlConnection(connectionString))
+                    {
+                        MySqlCommand cmd = new MySqlCommand("INSERT INTO Transaction (costumerID, date, type, amount) VALUES (@CostumerID, @Date, @Type, @Amount)");
+                        cmd.CommandType = CommandType.Text;
+                        cmd.Connection = connection;
+                        cmd.Parameters.AddWithValue("@CostumerID", "0001");
+                        cmd.Parameters.AddWithValue("@Date", localDate);
+                        cmd.Parameters.AddWithValue("@Type", swithordep);
+                        cmd.Parameters.AddWithValue("@Amount", amount);
+                        connection.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    database_connection();
+                }
+                    lbl_deposit.Visible = false;
+                    lbl_withdraw.Visible = false;
+                    lbl_dot.Visible = false;
+                    txt_num1.Text = "";
+                    txt_num2.Text = "";
+                    txt_num1.Visible = false;
+                    txt_num2.Visible = false;
+                    button1.Visible = false;
+                    dataGridView1.Visible = true;
+                }
         }
 
         private void depositToolStripMenuItem1_Click(object sender, EventArgs e)
