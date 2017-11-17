@@ -48,7 +48,7 @@
             this.lbl_deposit = new System.Windows.Forms.Label();
             this.lbl_withdraw = new System.Windows.Forms.Label();
             this.txt_num1 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbl_dot = new System.Windows.Forms.Label();
             this.txt_num2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
@@ -72,7 +72,6 @@
             this.withdrawToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.depositToolStripMenuItem1,
             this.withdrawToolStripMenuItem1});
-            this.withdrawToolStripMenuItem.Enabled = false;
             this.withdrawToolStripMenuItem.Name = "withdrawToolStripMenuItem";
             this.withdrawToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.withdrawToolStripMenuItem.Text = "cash";
@@ -80,14 +79,16 @@
             // depositToolStripMenuItem1
             // 
             this.depositToolStripMenuItem1.Name = "depositToolStripMenuItem1";
-            this.depositToolStripMenuItem1.Size = new System.Drawing.Size(123, 22);
+            this.depositToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.depositToolStripMenuItem1.Text = "deposit";
+            this.depositToolStripMenuItem1.Click += new System.EventHandler(this.depositToolStripMenuItem1_Click);
             // 
             // withdrawToolStripMenuItem1
             // 
             this.withdrawToolStripMenuItem1.Name = "withdrawToolStripMenuItem1";
-            this.withdrawToolStripMenuItem1.Size = new System.Drawing.Size(123, 22);
+            this.withdrawToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.withdrawToolStripMenuItem1.Text = "withdraw";
+            this.withdrawToolStripMenuItem1.Click += new System.EventHandler(this.withdrawToolStripMenuItem1_Click);
             // 
             // newCustomerToolStripMenuItem
             // 
@@ -191,7 +192,6 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(921, 454);
             this.dataGridView1.TabIndex = 3;
-            this.dataGridView1.Visible = false;
             // 
             // lbl_deposit
             // 
@@ -201,6 +201,7 @@
             this.lbl_deposit.Size = new System.Drawing.Size(46, 13);
             this.lbl_deposit.TabIndex = 4;
             this.lbl_deposit.Text = "Deposit:";
+            this.lbl_deposit.Visible = false;
             // 
             // lbl_withdraw
             // 
@@ -210,6 +211,7 @@
             this.lbl_withdraw.Size = new System.Drawing.Size(55, 13);
             this.lbl_withdraw.TabIndex = 5;
             this.lbl_withdraw.Text = "Withdraw:";
+            this.lbl_withdraw.Visible = false;
             // 
             // txt_num1
             // 
@@ -219,17 +221,19 @@
             this.txt_num1.Size = new System.Drawing.Size(72, 20);
             this.txt_num1.TabIndex = 6;
             this.txt_num1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txt_num1.Visible = false;
             this.txt_num1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
-            // label5
+            // lbl_dot
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(145, 115);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(10, 13);
-            this.label5.TabIndex = 7;
-            this.label5.Text = ".";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.lbl_dot.AutoSize = true;
+            this.lbl_dot.Location = new System.Drawing.Point(145, 115);
+            this.lbl_dot.Name = "lbl_dot";
+            this.lbl_dot.Size = new System.Drawing.Size(10, 13);
+            this.lbl_dot.TabIndex = 7;
+            this.lbl_dot.Text = ".";
+            this.lbl_dot.Visible = false;
+            this.lbl_dot.Click += new System.EventHandler(this.label5_Click);
             // 
             // txt_num2
             // 
@@ -238,6 +242,7 @@
             this.txt_num2.Name = "txt_num2";
             this.txt_num2.Size = new System.Drawing.Size(23, 20);
             this.txt_num2.TabIndex = 8;
+            this.txt_num2.Visible = false;
             this.txt_num2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // button1
@@ -248,6 +253,7 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "Accept";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // f_Employee
@@ -259,7 +265,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txt_num2);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lbl_dot);
             this.Controls.Add(this.txt_num1);
             this.Controls.Add(this.lbl_withdraw);
             this.Controls.Add(this.lbl_deposit);
@@ -302,7 +308,7 @@
         private System.Windows.Forms.Label lbl_deposit;
         private System.Windows.Forms.Label lbl_withdraw;
         private System.Windows.Forms.TextBox txt_num1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbl_dot;
         private System.Windows.Forms.TextBox txt_num2;
         private System.Windows.Forms.Button button1;
     }

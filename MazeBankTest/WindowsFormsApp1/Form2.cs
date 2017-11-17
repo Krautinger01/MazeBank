@@ -13,6 +13,8 @@ namespace WindowsFormsApp1
 {
     public partial class f_Employee : Form
     {
+        //bool withordep   false -> withdraw  true -> deposit
+        private bool withordep;
         private string server;
         private string database;
         private string uid;
@@ -46,7 +48,7 @@ namespace WindowsFormsApp1
             connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
             connection = new MySqlConnection(connectionString);
 
-            if(this.OpenConnection() == true)
+            if (this.OpenConnection() == true)
             {
                 mySqlDataAdapter = new MySqlDataAdapter("select * from Transaction", connection);
                 DataSet DS = new DataSet();
@@ -56,6 +58,7 @@ namespace WindowsFormsApp1
                 this.CloseConnection();
             }
         }
+
 
         //Open Connection to Database
         private bool OpenConnection()
@@ -67,7 +70,7 @@ namespace WindowsFormsApp1
             }
             catch (MySqlException ex)
             {
-                switch(ex.Number)
+                switch (ex.Number)
                 {
                     case 0:
                         MessageBox.Show("Cannot connect to Server. Contact Administration");
@@ -81,7 +84,7 @@ namespace WindowsFormsApp1
                 }
                 return false;
             }
-            
+
         }
 
         //Close Connection
@@ -114,9 +117,13 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if(txt_num1.Text != "" && txt_num2.Text != "" || Convert.ToInt64(txt_num1.Text) + Convert.ToInt64(txt_num2.Text) > 0 || txt_num1.Text != "" && Convert.ToInt64(txt_num2.Text) > 0 || txt_num2.Text != "" && Convert.ToInt64(txt_num1.Text) > 0)
+            {
+            DateTime localDate = DateTime.Now;
             bool zer0 = false;
+            string swithordep;
             double amount1, amount2, amount;
-            if(txt_num1.Text == "")
+            if (txt_num1.Text == "")
             {
                 amount1 = 0;
             }
@@ -129,7 +136,7 @@ namespace WindowsFormsApp1
                 amount2 = 0;
                 zer0 = true;
             }
-            else if(Convert.ToDouble(txt_num2.Text) < 10)
+            else if (Convert.ToDouble(txt_num2.Text) < 10)
             {
                 amount2 = Convert.ToDouble(txt_num2.Text) * 10;
                 zer0 = false;
@@ -140,16 +147,88 @@ namespace WindowsFormsApp1
                 zer0 = false;
             }
 
-            if(zer0 == true)
+            if (zer0 == true)
             {
                 amount = amount1 * 100;
             }
             else
             {
-                amount = amount1 * 100 + amount2;
+                amount = amount1 + amount2 / 100;
             }
 
             lbl_balance.Text = ("Balance: " + Convert.ToString(amount));
+
+            if(withordep == false)
+            {
+                swithordep = "withdraw";
+            }
+            else
+            {
+                swithordep = "deposit";
+            }
+
+            //Database
+            server = "eduweb.kb.local";
+            database = "team08";
+            uid = "team08";
+            password = "T3amO8";
+            string connectionString;
+            connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+            connection = new MySqlConnection(connectionString);
+
+            
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO Transaction (costumerID, date, type, amount) VALUES (@CostumerID, @Date, @Type, @Amount)");
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = connection;
+                cmd.Parameters.AddWithValue("@CostumerID", "0001");
+                cmd.Parameters.AddWithValue("@Date", localDate);
+                cmd.Parameters.AddWithValue("@Type", swithordep);
+                cmd.Parameters.AddWithValue("@Amount", amount);
+                connection.Open();
+                cmd.ExecuteNonQuery();
+            }
+
+            database_connection();
+
+            lbl_deposit.Visible = false;
+            lbl_withdraw.Visible = false;
+            lbl_dot.Visible = false;
+            txt_num1.Text = "";
+            txt_num2.Text = "";
+            txt_num1.Visible = false;
+            txt_num2.Visible = false;
+            button1.Visible = false;
+            dataGridView1.Visible = true;
+            }
+            else
+            {
+
+            }
+        }
+
+        private void depositToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            withordep = true;
+            dataGridView1.Visible = false;
+            lbl_deposit.Visible = true;
+            lbl_dot.Visible = true;
+            txt_num1.Visible = true;
+            txt_num2.Visible = true;
+            button1.Visible = true;
+        }
+
+        private void withdrawToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            withordep = false;
+            dataGridView1.Visible = false;
+            lbl_withdraw.Visible = true;
+            lbl_dot.Visible = true;
+            txt_num1.Visible = true;
+            txt_num2.Visible = true;
+            button1.Visible = true;
         }
     }
 }
