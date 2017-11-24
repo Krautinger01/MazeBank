@@ -230,6 +230,22 @@ namespace WindowsFormsApp1
             txt_num2.Visible = true;
             button1.Visible = true;
         }
+
+        private void changeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Visible = false;
+            lbl_deposit.Visible = false;
+            lbl_withdraw.Visible = false;
+            lbl_dot.Visible = false;
+            txt_num1.Text = "";
+            txt_num2.Text = "";
+            txt_num1.Visible = false;
+            txt_num2.Visible = false;
+            button1.Visible = false;
+            lbl_konto.Visible = true;
+            txt_konto.Visible = true;
+            btn_konto.Visible = true;
+        }
     }
 }
 

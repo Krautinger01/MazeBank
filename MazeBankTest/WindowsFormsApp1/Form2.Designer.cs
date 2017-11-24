@@ -51,6 +51,9 @@
             this.lbl_dot = new System.Windows.Forms.Label();
             this.txt_num2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.lbl_konto = new System.Windows.Forms.Label();
+            this.txt_konto = new System.Windows.Forms.TextBox();
+            this.btn_konto = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -127,6 +130,7 @@
             this.changeToolStripMenuItem.Name = "changeToolStripMenuItem";
             this.changeToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.changeToolStripMenuItem.Text = "change";
+            this.changeToolStripMenuItem.Click += new System.EventHandler(this.changeToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
@@ -256,6 +260,37 @@
             this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // lbl_konto
+            // 
+            this.lbl_konto.AutoSize = true;
+            this.lbl_konto.Location = new System.Drawing.Point(12, 142);
+            this.lbl_konto.Name = "lbl_konto";
+            this.lbl_konto.Size = new System.Drawing.Size(35, 13);
+            this.lbl_konto.TabIndex = 10;
+            this.lbl_konto.Text = "IBAN:";
+            this.lbl_konto.Visible = false;
+            // 
+            // txt_konto
+            // 
+            this.txt_konto.Location = new System.Drawing.Point(73, 139);
+            this.txt_konto.MaxLength = 11;
+            this.txt_konto.Name = "txt_konto";
+            this.txt_konto.Size = new System.Drawing.Size(106, 20);
+            this.txt_konto.TabIndex = 11;
+            this.txt_konto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txt_konto.Visible = false;
+            this.txt_konto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            // 
+            // btn_konto
+            // 
+            this.btn_konto.Location = new System.Drawing.Point(185, 137);
+            this.btn_konto.Name = "btn_konto";
+            this.btn_konto.Size = new System.Drawing.Size(75, 23);
+            this.btn_konto.TabIndex = 12;
+            this.btn_konto.Text = "Accept";
+            this.btn_konto.UseVisualStyleBackColor = true;
+            this.btn_konto.Visible = false;
+            // 
             // f_Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -263,6 +298,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(921, 533);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_konto);
+            this.Controls.Add(this.txt_konto);
+            this.Controls.Add(this.lbl_konto);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txt_num2);
             this.Controls.Add(this.lbl_dot);
@@ -311,5 +349,8 @@
         private System.Windows.Forms.Label lbl_dot;
         private System.Windows.Forms.TextBox txt_num2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lbl_konto;
+        private System.Windows.Forms.TextBox txt_konto;
+        private System.Windows.Forms.Button btn_konto;
     }
 }

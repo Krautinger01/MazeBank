@@ -186,13 +186,13 @@
             // employeeToolStripMenuItem1
             // 
             this.employeeToolStripMenuItem1.Name = "employeeToolStripMenuItem1";
-            this.employeeToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.employeeToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
             this.employeeToolStripMenuItem1.Text = "Employee";
             // 
             // aTMToolStripMenuItem1
             // 
             this.aTMToolStripMenuItem1.Name = "aTMToolStripMenuItem1";
-            this.aTMToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.aTMToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
             this.aTMToolStripMenuItem1.Text = "ATM";
             // 
             // loginatm_lbl_Bic
@@ -203,9 +203,9 @@
             this.loginatm_lbl_Bic.ForeColor = System.Drawing.Color.White;
             this.loginatm_lbl_Bic.Location = new System.Drawing.Point(12, 42);
             this.loginatm_lbl_Bic.Name = "loginatm_lbl_Bic";
-            this.loginatm_lbl_Bic.Size = new System.Drawing.Size(39, 20);
+            this.loginatm_lbl_Bic.Size = new System.Drawing.Size(51, 20);
             this.loginatm_lbl_Bic.TabIndex = 8;
-            this.loginatm_lbl_Bic.Text = "BIC";
+            this.loginatm_lbl_Bic.Text = "IBAN";
             this.loginatm_lbl_Bic.Visible = false;
             // 
             // loginatm_txt_Bic
@@ -298,7 +298,7 @@
             this.lbl_Credits.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Credits.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.lbl_Credits.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbl_Credits.Location = new System.Drawing.Point(12, 39);
+            this.lbl_Credits.Location = new System.Drawing.Point(12, 42);
             this.lbl_Credits.Name = "lbl_Credits";
             this.lbl_Credits.Size = new System.Drawing.Size(307, 52);
             this.lbl_Credits.TabIndex = 16;
