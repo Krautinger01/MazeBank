@@ -59,6 +59,28 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void database_connection_customer()
+        {
+
+            server = "eduweb.kb.local";
+            database = "team08";
+            uid = "team08";
+            password = "T3amO8";
+            string connectionString;
+            connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+            connection = new MySqlConnection(connectionString);
+
+            if (this.OpenConnection() == true)
+            {
+                mySqlDataAdapter = new MySqlDataAdapter("select customerID, BIC, IBAN, balance, interest, date from Customer", connection);
+                DataSet DS = new DataSet();
+                mySqlDataAdapter.Fill(DS);
+                dataGridView1.DataSource = DS.Tables[0];
+
+                this.CloseConnection();
+            }
+        }
+
 
         //Open Connection to Database
         private bool OpenConnection()
@@ -205,35 +227,62 @@ namespace WindowsFormsApp1
                     txt_num1.Visible = false;
                     txt_num2.Visible = false;
                     button1.Visible = false;
+                    lbl_balance.Visible = true;
                     dataGridView1.Visible = true;
+                    lbl_balance.Left = 12;
+                    lbl_balance.Top = 46;
+
                 }
         }
-
+        //Show Deposit
         private void depositToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            lbl_Current.Text = "Deposit";
+            database_connection();
             withordep = true;
-            dataGridView1.Visible = false;
+            txt_konto.Text = "";
+            lbl_konto.Visible = false;
+            txt_konto.Visible = false;
+            btn_konto.Visible = false;
+            lbl_withdraw.Visible = false;
+            dataGridView1.Visible = true;
+            lbl_balance.Visible = true;
             lbl_deposit.Visible = true;
             lbl_dot.Visible = true;
             txt_num1.Visible = true;
             txt_num2.Visible = true;
             button1.Visible = true;
+            grp_add.Visible = false;
+            lbl_balance.Left = 270;
+            lbl_balance.Top = 46;
         }
-
+        //Show Withdraw
         private void withdrawToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            lbl_Current.Text = "Withdraw";
+            database_connection();
             withordep = false;
-            dataGridView1.Visible = false;
-            lbl_withdraw.Visible = true;
+            txt_konto.Text = "";
+            dataGridView1.Visible = true;
+            lbl_konto.Visible = false;
+            txt_konto.Visible = false;
+            btn_konto.Visible = false;
+            lbl_deposit.Visible = true;
+            lbl_balance.Visible = true;
+            lbl_withdraw.Visible = false;
             lbl_dot.Visible = true;
             txt_num1.Visible = true;
             txt_num2.Visible = true;
             button1.Visible = true;
+            grp_add.Visible = false;
+            lbl_balance.Left = 270;
+            lbl_balance.Top = 46;
         }
-
+        //Change Customer
         private void changeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dataGridView1.Visible = false;
+            lbl_Current.Text = "Pick Customer";
+            dataGridView1.Visible = true;
             lbl_deposit.Visible = false;
             lbl_withdraw.Visible = false;
             lbl_dot.Visible = false;
@@ -242,9 +291,96 @@ namespace WindowsFormsApp1
             txt_num1.Visible = false;
             txt_num2.Visible = false;
             button1.Visible = false;
+            lbl_balance.Visible = false;
             lbl_konto.Visible = true;
             txt_konto.Visible = true;
             btn_konto.Visible = true;
+            grp_add.Visible = false;
+            database_connection_customer();
+            lbl_balance.Left = 12;
+            lbl_balance.Top = 46;
+        }
+        //Show Transactions
+        private void transactionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lbl_Current.Text = "Transactions";
+            lbl_deposit.Visible = false;
+            lbl_withdraw.Visible = false;
+            lbl_dot.Visible = false;
+            txt_num1.Text = "";
+            txt_num2.Text = "";
+            txt_konto.Text = "";
+            txt_num1.Visible = false;
+            txt_num2.Visible = false;
+            button1.Visible = false;
+            lbl_konto.Visible = false;
+            txt_konto.Visible = false;
+            btn_konto.Visible = false;
+            lbl_balance.Visible = true;
+            dataGridView1.Visible = true;
+            grp_add.Visible = false;
+            database_connection();
+            lbl_balance.Left = 12;
+            lbl_balance.Top = 46;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void logoutToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            lbl_Current.Text = "Transactions";
+            lbl_deposit.Visible = false;
+            lbl_withdraw.Visible = false;
+            lbl_dot.Visible = false;
+            txt_num1.Text = "";
+            txt_num2.Text = "";
+            txt_konto.Text = "";
+            txt_num1.Visible = false;
+            txt_num2.Visible = false;
+            button1.Visible = false;
+            lbl_konto.Visible = false;
+            txt_konto.Visible = false;
+            btn_konto.Visible = false;
+            lbl_balance.Visible = true;
+            dataGridView1.Visible = true;
+            grp_add.Visible = false;
+            database_connection();
+            lbl_balance.Left = 12;
+            lbl_balance.Top = 46;
+            f_login formLogin = new f_login();
+            this.Hide();
+            formLogin.Show();
+        }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lbl_Current.Text = "Add User";
+            lbl_deposit.Visible = false;
+            lbl_withdraw.Visible = false;
+            lbl_dot.Visible = false;
+            txt_num1.Text = "";
+            txt_num2.Text = "";
+            txt_konto.Text = "";
+            txt_num1.Visible = false;
+            txt_num2.Visible = false;
+            button1.Visible = false;
+            lbl_konto.Visible = false;
+            txt_konto.Visible = false;
+            btn_konto.Visible = false;
+            lbl_balance.Visible = false;
+            dataGridView1.Visible = false;
+            database_connection();
+            lbl_balance.Left = 12;
+            lbl_balance.Top = 46;
+            grp_add.Visible = true;
+        }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

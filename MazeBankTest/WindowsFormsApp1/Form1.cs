@@ -50,8 +50,10 @@ namespace WindowsFormsApp1
         {
             loginemp_lbl_User.Visible = false;
             loginemp_txt_User.Visible = false;
+            loginemp_txt_User.Text = "";
             loginemp_lbl_Pass.Visible = false;
             loginemp_txt_Pass.Visible = false;
+            loginemp_txt_Pass.Text = "";
             loginemp_btn_Login.Visible = false;
             loginemp_lbl_Current.Visible = false;
         }
@@ -78,8 +80,10 @@ namespace WindowsFormsApp1
         {
             loginatm_lbl_Bic.Visible = false;
             loginatm_txt_Bic.Visible = false;
+            loginatm_txt_Bic.Text = "";
             loginatm_lbl_Pin.Visible = false;
             loginatm_txt_Pin.Visible = false;
+            loginatm_txt_Pin.Text = "";
             loginatm_btn_Login.Visible = false;
             loginatm_lbl_Current.Visible = false;
         }
@@ -100,6 +104,10 @@ namespace WindowsFormsApp1
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            loginatm_txt_Bic.Text = "";
+            loginatm_txt_Pin.Text = "";
+            loginemp_txt_Pass.Text = "";
+            loginemp_txt_User.Text = "";
             f_Employee formEmployee = new f_Employee();
             this.Hide();
             formEmployee.Show();
