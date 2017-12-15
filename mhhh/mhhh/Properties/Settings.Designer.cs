@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Stress.Properties
+namespace mhhh.Properties
 {
 
 

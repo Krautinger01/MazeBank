@@ -1,4 +1,4 @@
-﻿namespace Stress
+﻿namespace mhhh
 {
     partial class Form1
     {

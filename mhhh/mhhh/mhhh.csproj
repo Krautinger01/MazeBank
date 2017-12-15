@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{709C07D3-C369-455D-AB74-03AFED000355}</ProjectGuid>
+    <ProjectGuid>{52009C2D-6320-4926-AD2A-EA6A4A1BA0E0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Stress</RootNamespace>
-    <AssemblyName>Stress</AssemblyName>
+    <RootNamespace>mhhh</RootNamespace>
+    <AssemblyName>mhhh</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
